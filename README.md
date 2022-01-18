@@ -25,3 +25,6 @@ README.md - то, что вы сейчас читаете, файл с объя�
 requirements.txt - содержит зависимости для установки их в исполнительную среду Heroku, нужны для работы bot.py
 
 template.py - шаблон с полем для вставки своего алгоритма работы кода
+
+## Colab AntiProxy File
+[Jupyter Notebook](https://colab.research.google.com/github/SmoothDenis/smdtestbot/blob/main/AntiProxy/[JunIT]_Create_database.ipynb)

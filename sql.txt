@@ -1,7 +1,0 @@
-CREATE TABLE weather_log (
-  id_data INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  detail VARCHAR,
-  temp INT,
-  tg_id INT,
-  "time" VARCHAR
-);

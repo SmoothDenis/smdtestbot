@@ -27,4 +27,4 @@ requirements.txt - содержит зависимости для установ
 template.py - шаблон с полем для вставки своего алгоритма работы кода
 
 ## Colab AntiProxy File
-[Jupyter Notebook](https://colab.research.google.com/github/SmoothDenis/smdtestbot/blob/main/AntiProxy/[JunIT]_Create_database.ipynb)
+[Jupyter Notebook](https://colab.research.google.com/github/SmoothDenis/smdtestbot/blob/main/AntiProxy/[JunIT]_Create_database.ipynb) - нужен для первичного создания базы данных, так как Beekeeper Studio работать через прокси института не в состоянии.

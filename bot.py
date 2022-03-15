@@ -70,6 +70,7 @@ mgr = owm.weather_manager()
 commands = [
     BotCommand("start", "Перезапуск бота"),
     BotCommand("weather", "Екатеринбург: прогноз"),
+    BotCommand("secret", "Секретная фича"),
 ]
 bot.set_my_commands(commands=commands)
 
@@ -105,12 +106,14 @@ def send_welcome(message):
     bot.send_message(message.chat.id, "Привет, это погодный бот от @SmoothDenis")
 
 
-@bot.message_handler(commands=["info"])
+@bot.message_handler(commands=["secret"])
 def send_welcome(message):
-    if message.chat.id == '145708128':
-        bot.send_message(message.chat.id, "Привет, это тайное послание")
+    check_id = message.chat.id
+    if check_id == 145708128:
+        bot.send_message(check_id, "Привет, это тайное послание")
+        bot.send_message(145708128, "Привет-привет")
     else:
-        bot.send_message(message.chat.id, "Такой функции не существует...")
+        bot.send_message(check_id, "Такой функции не существует...")
 
 
 # Answer to any text and "Погода" case

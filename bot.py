@@ -105,6 +105,14 @@ def send_welcome(message):
     bot.send_message(message.chat.id, "Привет, это погодный бот от @SmoothDenis")
 
 
+@bot.message_handler(commands=["info"])
+def send_welcome(message):
+    if message.chat.id == '145708128':
+        bot.send_message(message.chat.id, "Привет, это тайное послание")
+    else:
+        bot.send_message(message.chat.id, "Такой функции не существует...")
+
+
 # Answer to any text and "Погода" case
 @bot.message_handler(content_types=["text"])
 def send_m(message):

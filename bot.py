@@ -62,6 +62,14 @@ def push_to_database(message, t, w):
             connection.close()
             print("PostgreSQL connection is closed")
 
+# Secret function for Admins
+# Set Admins ID
+admins = [145708128, 1125695646]
+def check_id(member_id):
+    if member_id in admins:
+        return 'YES'
+    else:
+        return 'NO'
 
 # PASTE THERE YOUR CODE | HANDLE BLOCK START
 
@@ -99,22 +107,18 @@ def send_welcome(message):
     # Log answer to data
     push_to_database(message, t, w)
 
-
 # Hello message
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
     bot.send_message(message.chat.id, "Привет, это погодный бот от @SmoothDenis")
 
-
 @bot.message_handler(commands=["secret"])
 def send_welcome(message):
-    check_id = message.chat.id
-    if check_id == 145708128:
-        bot.send_message(check_id, "Привет, это тайное послание")
-        bot.send_message(145708128, "Привет-привет")
+    if check_id(message.chat.id) == 'YES':
+        bot.send_message(message.chat.id, "Запускаю рассылку...")
+        bot.send_message(1125695646, "Тебе привет от админа бота")
     else:
-        bot.send_message(check_id, "Такой функции не существует...")
-
+        bot.send_message(message.chat.id, "Такой функции не существует...")
 
 # Answer to any text and "Погода" case
 @bot.message_handler(content_types=["text"])
@@ -148,7 +152,6 @@ def send_m(message):
             message.chat.id,
             "Связь с сервером есть. Ваш ID телеграм: " + str(message.chat.id),
         )
-
 
 # PASTE ABOVE YOUR CODE | HANDLE BLOCK END
 
